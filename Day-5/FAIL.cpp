@@ -1,0 +1,100 @@
+// https://www.codechef.com/problems/FAIL
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// ---------------- FAST IO ----------------
+#define fastio() ios_base::sync_with_stdio(false); cin.tie(NULL)
+
+// ---------------- MACROS ----------------
+#define ll long long
+#define all(x) (x).begin(), (x).end()
+#define endl '\n'
+#define yes cout << "YES\n";
+#define no cout << "NO\n";
+#define print(x) cout << #x << '\n'
+
+// ---------------- CONSTANTS ----------------
+const ll MOD = 1e9 + 7;
+const ll INF = 1e18;
+
+// ---------------- VECTOR UTILITIES ----------------
+
+// Vector Input (Generic)
+template<typename T>
+void inputVec(vector<T>& v) {
+    for (auto &x : v)
+        cin >> x;
+}
+
+// Sort Ascending
+template<typename T>
+void sortAsc(vector<T>& v) {
+    sort(all(v));
+}
+
+// Sort Descending
+template<typename T>
+void sortDesc(vector<T>& v) {
+    sort(all(v), greater<T>());
+}
+
+// Reverse Vector
+template<typename T>
+void reverseVec(vector<T>& v) {
+    reverse(all(v));
+}
+
+// Print Vector
+template<typename T>
+void printVec(const vector<T>& v) {
+    for (auto x : v)
+        cout << x << " ";
+    cout << endl;
+}
+
+// ---------------- SOLVE ----------------
+void solve() {
+    
+    int n; cin>>n;
+
+    // int n, m; cin>>n>>m;
+    
+    // int a,b,c; cin>>a>>b>>c;
+    
+    
+
+    vector<int> v(n);
+    inputVec(v);   // vectorinput
+    
+    double sum=0, avg=0;
+    
+    int i=0;
+    for(i=0;i<n;i++) {
+        sum+=v[i];
+        avg=sum/(i+1);
+        if(avg<40) {
+            print(no);
+            break;
+        }
+    }
+    if(i==n) print(yes);
+
+
+    // printVec(v);
+    
+}
+
+// ---------------- MAIN ----------------
+int main() {
+    fastio();
+
+    int t = 1;
+    cin >> t;  
+
+    while (t--) {
+        solve();
+    }
+
+    return 0;
+}
