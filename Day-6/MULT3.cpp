@@ -12,5 +12,4 @@ int main() {
 	else cout<<n-1<<"\n";
 	
 	return 0;
-
 }
